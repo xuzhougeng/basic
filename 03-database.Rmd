@@ -27,7 +27,9 @@
 而且，我觉得大部分人看到了下面这些密密麻麻的ID，肯定是要疯掉的。
 一般初学者常见的ID转换工具就是DAVID了，但其实可以自己用R编程的各种包来做转换，这样自己知道自己在做什么，也了解ID是如何定义的。
 
-![密密麻麻的分子ID](image/C3/bioDBnet.jpg)
+```{r manyID,fig.cap="密密麻麻的分子ID", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C3/bioDBnet.jpg")
+```
 
 ### 常见的数据库ID {-}
 
@@ -187,14 +189,14 @@ Gene Symbol大写字母加数字，一生平庸最常见
 
 直达车：
 
-http://www.biotrainee.com/thread-941-1-1.html
+<http://www.biotrainee.com/thread-941-1-1.html>
 
-http://www.biotrainee.com/thread-862-1-1.html
+<http://www.biotrainee.com/thread-862-1-1.html>
 
 
 ## 参考基因组版本
 
-#### 不同版本对应关系 {-}
+### 不同版本对应关系 {-}
 
 hg19，GRCH37和ensembl75是三种国际生物信息学数据库资源收集存储单位，即NCBI，UCSC和ENSEMBL各自发布的基因组信息。
 
@@ -231,23 +233,23 @@ Dec 12 2012 00:00    Directory BUILD.37.3
 
 如果要下载GTF注释文件，基因组版本尤为重要。
 
-##### **NCBI**：最新版（hg38） {-}
+#### **NCBI**：最新版（hg38） {-}
 
 - ftp://ftp.ncbi.nih.gov/genomes/H_sapiens/GFF/ 
 
-##### **NCBI**：其它版本 {-}
+#### **NCBI**：其它版本 {-}
 
-- ftp://ftp.ncbi.nlm.nih.gov/genomes/Homo_sapiens/ARCHIVE/    
+- <ftp://ftp.ncbi.nlm.nih.gov/genomes/Homo_sapiens/ARCHIVE/>
 
-##### **Ensembl** {-}
+#### **Ensembl** {-}
 
-- ftp://ftp.ensembl.org/pub/release-75/gtf/homo_sapiens/Homo_sapiens.GRCh37.75.gtf.gz
+- <ftp://ftp.ensembl.org/pub/release-75/gtf/homo_sapiens/Homo_sapiens.GRCh37.75.gtf.gz>
 
 > 变化上面链接中的**release**就可以拿到所有版本信息
 
-- ftp://ftp.ensembl.org/pub/
+- <ftp://ftp.ensembl.org/pub/>
 
-##### **UCSC**  {-}
+#### **UCSC**  {-}
 
 它本身需要一系列参数：
 
@@ -338,7 +340,7 @@ https://baike.baidu.com/item/NCBI/3598184?fr=aladdin
 
 https://www.ncbi.nlm.nih.gov/books/NBK143764/
 
-### GEO
+### GEO {-}
 
 基因表达数据库(GEO,Gene Expression Omnibus database，https://www.ncbi.nlm.nih.gov/geo/ )是由NCBI负责维护的一个数据库，设计初衷是为了收集整理各种表达芯片数据，但是后来也加入了甲基化芯片，lncRNA，miRNA，CNV芯片等各种芯片，甚至高通量测序数据,是目前最大、最全面的公共基因表达数据资源。所有的数据均可以在ftp站点下载：ftp://ftp-trace.ncbi.nih.gov/geo/
 
@@ -449,7 +451,7 @@ http://www.bio-info-trainee.com/1835.html
 
 https://www.ncbi.nlm.nih.gov/geo/info/GEOHandoutFinal.pdf
 
-### SRA
+### SRA {-}
 
 跟GEO类似,NCBI的SRA（Sequence ReadArchive，https://www.ncbi.nlm.nih.gov/sra/ ）数据库是专门用于存储二代测序的原始数据，包括 454, IonTorrent, Illumina, SOLiD, Helicos and CompleteGenomics等。 除了原始序列数据外，SRA现在也存在raw reads在参考基因的aligment information。
 
@@ -531,7 +533,7 @@ http://www.biotrainee.com/thread-800-1-1.html
 https://www.ncbi.nlm.nih.gov/sra/docs/
 
 
-### dbSNP 
+### dbSNP {-}
 
 单核苷酸多态性（single nucleotide polymorphism，SNP） 主要是指在基因组水平上由单个核苷酸的变异所引起的DNA序列多态性。它是人类可遗传变异中最常见的一种，占所有已知多态性的90%以上。dbSNP(The Single Nucleotide Polymorphism database) 是一个公共的核酸多态性的数据库，它是关于单碱基替换以及短插入、删除多态性的资源库。网址：https://www.ncbi.nlm.nih.gov/projects/SNP。
 
@@ -690,7 +692,7 @@ http://blog.sina.com.cn/s/blog_751bd9440102w6rm.html
 
 https://www.ncbi.nlm.nih.gov/books/NBK21088/
 
-### RefSeq
+### RefSeq {-}
 
 NCBI RefSeq (Reference Sequence，美国国立生物技术信息中心参考序列库) 是目前世界上最具有权威性的序列数据库。NCBI的参考序列计划（RefSeq）将为中心法则中自然存在的分子，从染色体到mRNA到蛋白提供参考序列标准。RefSeq标准为人类基因组的功能注解提供一个基础。它们为突变分析，基因表达研究，和多态发现提供一个稳定的参考点。
 
@@ -805,7 +807,7 @@ https://www.ncbi.nlm.nih.gov/books/NBK21091/
 
 ftp://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/RefSeqGene/presentations/RefSeqGene.pptx
 
-### Entrez
+### Entrez {-}
 
 Entrez (http://www.ncbi.nlm.nih.gov/Entrez) 是美国国家生物技术信息中心所提供的在线资源检索器。该资源将GenBank序列与其原始文献出处链接在一起。 Entrez是由NCBI主持的一个数据库检索系统。
 
@@ -1551,7 +1553,7 @@ http://paper.dxy.cn/article/511878
 
 https://cancergenome.nih.gov/abouttcga/overview
 
-##1000 GENOME
+## 1000 GENOME
 
 **一、简介**
 

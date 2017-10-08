@@ -6,9 +6,12 @@
 
 其中大部分生物信息学相关数据都会由全世界各地的科研工作者上传到GEO数据库，包括各种芯片数据及针对各种物种的测序数据，它们的[样本数排序](https://www.ncbi.nlm.nih.gov/geo/browse/?view=platforms&display=20&zsort=samples)如下：
 
-![平台流行程度](image/C1/GEO_platform_top50.png)
+```{r platform,fig.cap="平台流行程度", fig.align='center', echo=FALSE}
+knitr::include_graphics('image/C1/GEO_platform_top50.png')
+```
 
-由上表可以看出，到目前为止（2017年）**累积应用**最广泛仍然是mRNA的表达谱检测芯片，以affymetrix的 Human Genome U133 Plus 2.0 Array和illumina的HumanHT-12 V4.0 expression beadchip为代表。
+
+由图\@ref(fig:platform)里的表所示，到目前为止（2017年）**累积应用**最广泛仍然是mRNA的表达谱检测芯片，以affymetrix的 Human Genome U133 Plus 2.0 Array和illumina的HumanHT-12 V4.0 expression beadchip为代表。
 高通量测序作为后起之秀已经逐渐在超过芯片数据样本量了，而且高通量测序几乎都是illumina的测序仪产出的，包括HiSeq 2000/2500，nextSeq500,MiSeq等等。虽然HiSeq X10并没有排在前面，原因其实是GEO公布的数据与现实有两到三年的时差，因为测序数据需要发表文章之后才会公布，而且可以设置一到两年的释放期限。
 
 值得一提的是HiSeq X10作为目前通量最高的测序仪，其大多测的是人类癌症病人相关数据，而这些数据因为隐私问题，很多都是不予公开的，需要注册申请才能下载。
@@ -21,7 +24,7 @@
 
 这样，做生物信息学数据分析的我们还是得掌握它们的基本分类，历史，以及处理方法。而且已经发表的芯片数据量非常庞大，在里面进行一些探索性挖掘也会有意想不到的收获。当然，前提是要下功夫了解芯片，学习它们。
 
-### 三大芯片制造商
+### 三大芯片制造商 {-}
 
 > 在GEO数据库里面查看GPL信息，就可以看到芯片厂商出品的数据排名，基本上就是 affymetrix , illumina , agilent 这3家公司为主。
 
@@ -51,7 +54,9 @@ Affymetrix公司曾入围全球50个最具创新能力公司和2011年度Frost &
 
 在GEO数据库里面，[Affymetrix芯片的样本排序是](https://www.ncbi.nlm.nih.gov/geo/browse/?view=platforms&search=Affymetrix&display=20&zsort=samples)：
 
-![Affymetrix芯片排序](image/C1/GEO_Affymetrix_top50.png)
+```{r Affymetrix,fig.cap="Affymetrix芯片排序", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C1/GEO_Affymetrix_top50.png")
+```
 
 #### Illumina  {-}
 
@@ -74,7 +79,10 @@ Illumina的核心技术是光纤微珠芯片平台和Solexa测序平台，广泛
 
 在GEO数据库里面，[Illumina芯片的样本排序是](https://www.ncbi.nlm.nih.gov/geo/browse/?view=platforms&search=Illumina&display=20&zsort=samples)：
 
-![Illumina芯片排序](image/C1/GEO_Illumina_top50.png)
+```{r Illumina,fig.cap="Illumina芯片排序", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C1/GEO_Illumina_top50.png")
+```
+
 
 
 不得不提的是Illumina公司的产品线除了上面提讲解的通量生物芯片，更为流行的其实是高通量测序仪，当然，还有少量定量PCR仪。
@@ -96,11 +104,11 @@ Agilent的表达谱芯片，是用荧光素直接标记的，检测灵敏度高�
 
 在GEO数据库里面，[Agilent芯片的样本排序是](https://www.ncbi.nlm.nih.gov/geo/browse/?view=platforms&search=agilent&display=20&zsort=samples)：
 
-![Agilent芯片排序](image/C1/GEO_Agilent_top50.png)
+```{r Agilent,fig.cap="Agilent芯片排序", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C1/GEO_Agilent_top50.png")
+```
 
-
-
-### 表达谱芯片
+### 表达谱芯片 {-}
 
 > 最初的芯片就是为了检测mRNA的表达量而设计开发的，而affymetrix就是其中的佼佼者。
 
@@ -112,11 +120,15 @@ Agilent的表达谱芯片，是用荧光素直接标记的，检测灵敏度高�
 
 早期的表达谱芯片主要是Affymetrix公司的hgu系列，包括95,133 出货量最大的应该是**hgu133plus2系列**了，如下
 
-![](image/C1/affymetrix-133plus2-array.png)
+```{r hgu133plus2,fig.cap="hgu133plus2系列", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C1/affymetrix-133plus2-array.png")
+```
 
 统称为旧版的affymetrix芯片，用R语言的affy包即可读取进行数据处理，我曾经写过教程：[用affy包读取affymetix的基因表达芯片数据-CEL格式数据](http://www.bio-info-trainee.com/1580.html) 就是下面的代码：
 
-```
+
+
+```{r ,eval=FALSE}
 ## 把所有的cel文件都放在一个文件夹(比如/home/jmzeng/your/celfiles文件夹)下面，文件夹地址赋给变量 dir_cels
 dir_cels='/home/jmzeng/your/celfiles'
 library(affy)
@@ -133,12 +145,13 @@ write.exprs(eset,file="data.txt")
 ```
 
 还有新版的表达谱芯片，比如Human Gene 1.0 St Array  
-
-![](image/C1/affymetrix-2.0ST-array.png)
+```{r coverage,fig.cap="Coverage of GeneChip", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C1/affymetrix-2.0ST-array.png")
+```
 
 用R语言的oligo包来进行数据处理，我曾经写过教程：[用oligo包来读取affymetix的基因表达芯片数据-CEL格式数据](http://www.bio-info-trainee.com/1586.html)，把芯片数据转换为表达矩阵的核心代码如下：
 
-```
+```{r, eval=FALSE}
 library(oligo)
 celFiles <- list.celfiles()
 affyRaw <- read.celfiles(celFiles)
@@ -151,7 +164,9 @@ write.exprs(eset,file="data.txt")
 
 affymetrix还开发了**更新版**的表达谱检测芯片，比如针对人类的HST2.0，据文献报道其很多方面都优于转录组测序，这款芯片设计比较复杂，如下：
 
-![](image/C1/affymetrix-human2.0ST-characterization.png)
+```{r HumanArray,fig.cap="Coverage of Human Transcriptome Array 2.0", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C1/affymetrix-human2.0ST-characterization.png")
+```
 
 不过，illumina的表达谱芯片也是非常出名的，比如Illumina HumanHT-12 V4.0 expression beadchip。 
 
@@ -168,10 +183,12 @@ affymetrix还开发了**更新版**的表达谱检测芯片，比如针对人类
 | GSE622221, GSE4180414, GSE5140122        | A total of 117 samples (54 cases and 63 controls) Affymetrix Human Genome U133 Plus 2.0 Array  2015-HCC |
 | [GSE21815](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE21815) | 2016-CRC Agilent-014850 Whole Human Genome Microarray 4x44K |
 
+Table: GEO中表达谱芯片代表数据
+
 公布这些数据的文章里面都有对这些数据处理的方法的详细描述，以及对应的分析结果。
 
 
-### 基因分型芯片
+### 基因分型芯片 {-}
 
 > 在人类基因组中，基因变异以许多不同的形式存在，包括体细胞突变、单核苷酸多态性（SNP）、拷贝数变异（CNV）和结构改变（插入缺失，Indel）。研究这些变异需要强大的基因分型工具。
 其中最出名就是Affymetrix的SNP6.0芯片以及illumina的OMIN系列，下面是详细介绍：
@@ -196,11 +213,13 @@ Axiom®基因分型解决方案为您提供多种芯片。您可以选择要研�
 
 illumina的Omni系列芯片经过了许多年的市场迭代，能检测的位点也越来越多，下面是它的一个简单的汇总表格。
  
-![illumina的Omni系列芯片进化史](image/C1/illumina_omni_array_list.png)
+```{r Omni,fig.cap="illumina的Omni系列芯片进化史", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C1/illumina_omni_array_list.png")
+```
 
-参考：https://www.illumina.com/Documents/products/datasheets/datasheet_gwas_roadmap.pdf
+参考：<https://www.illumina.com/Documents/products/datasheets/datasheet_gwas_roadmap.pdf>
 
-### CNV芯片
+### CNV芯片 {-}
 
 > 拷贝数变异（CNV）是由基因组发生重排而导致的，一般指长度为1 kb 以上的基因组大片段的拷贝数增加或者减少，主要表现为亚显微水平的缺失和重复。
 CNV 是基因组结构变异 ( SV ) 的重要组成部分。CNV 位点的突变率远高于SNP，是人类疾病的重要致病因素之一。
@@ -237,7 +256,7 @@ CNV 是基因组结构变异 ( SV ) 的重要组成部分。CNV 位点的突变�
 截止到目前(2017年09月07日)仅有22个实验数据，共355个样本的公共数据被上传。是非常新的平台
 
 
-### 甲基化芯片
+### 甲基化芯片 {-}
 
 > DNA甲基化对基因表达调控起着重要作用，而且这种调控作用可以随着细胞分裂在世代间稳定遗传。
 甲基化多发生于胞嘧啶位置，在细胞和组织分化、发育、衰老、疾病发生以及适应环境等过程中，甲基化状态可能随时发生变化。
@@ -262,7 +281,7 @@ DNA甲基化已成为当前分子生物学的研究热点之一。而芯片是�
 
 一个基因会设计多个探针，尤其是结构复杂的基因，一般会在启动子区域，utr区域，外显子，内含子等genebody上面设计探针，如果想把探针ID对应到具体的基因的具体区域，需要去其芯片官网找**manifest文件**。
 
-### miRNA芯片
+### miRNA芯片 {-}
 
 > microRNA(microRNA)是一种小的内源性非编码RNA分子，大约由21-25个核苷酸组成。通过与靶基因的3’UTR配对，促进mRNA的降解或抑制mRNA的翻译，从而抑制靶基因的表达。
 
@@ -285,7 +304,7 @@ DNA甲基化已成为当前分子生物学的研究热点之一。而芯片是�
 2005年454公司的 Genome Sequencer 20 System，2006年illumina公司的Solexa和2007年ABI公司的SOLiD标志着第二代测序技术的诞生。
 之后陆续在2006年推出454 FLX系统、2010年推出illumina HiSeq系统和同年推出的基于半导体芯片测序技术的Ion PGM已经陆续成为当前基因测序的中坚力量。
 
-### NGS先行者：454及其序列数据
+### NGS先行者：454及其序列数据 {-} 
 
 说到二代测序，454公司可谓是不折不扣的吃螃蟹的人。早在2005年，454就推出了第一个基于焦磷酸测序原理的高通量基因组测序系统——Genome Sequencer 20 System，这也是NGS领域的第一台测序仪。随后，454被罗氏收购，并在2006年推出了名动测序界的GS FLX测序系统。
 
@@ -308,7 +327,7 @@ DNA甲基化已成为当前分子生物学的研究热点之一。而芯片是�
 然而，虽然454的生命科学测序业务早已关停，454带来的影响却仍不容磨灭。
 来自众多大型科研项目（例如人类微生物组计划）中的海量454序列信息，仍是当今研究中不可或缺的重要参考数据和引用来源。
 
-### 渐行渐远：SOLiD及其序列数据
+### 渐行渐远：SOLiD及其序列数据 {-}
 
 再来谈谈几乎快被遗忘的ABI公司。事实上，在454和illumina走入市场之前，ABI一直处理测序市场上傲视群雄的霸主地位。
 在454和illumina初亮相后，由于SOLiD系统采用的是连接法而非PCR反应，因此对于高GC含量的样本具有非常大的优势。
@@ -332,7 +351,7 @@ colorspace编码规则为：
 
 虽然csfastq与目前流行的fastq格式记录的测序序列不同，但是csfastq文件也可作为fastqc的输入文件进行质控,并可利用多款软件进行后续分析，如SHRiMP、Sequel、BFAST和Bowtie等等。
  
-### 一家独大：illumina及其数据
+### 一家独大：illumina及其数据 {-}
 
 illumina在NGS乃至整个测序市场中的霸主地位已毋庸置疑。引用illumina官方说法：“世界上90%以上的测序数据都由Illumina仪器产生”，不较真的话，这句话确实在某种程度上反应了illumina雄踞NGS市场的现状。尤其是HiSeq系列测序仪的问世，以通量高，产量大，生产规模著称，能够快速、经济的进行大规模平行测序，在大型全基因组测序，全转录组，全外显子组测序，靶向基因测序方面优势明显。
 
@@ -380,7 +399,7 @@ illumina sequence identifier中包含了此次测序的信息，根据平台不�
 我们再回头看上面的例子，就可以对应查看这条序列文件中的测序信息了： 
 
 |标识符|解释|  
-|-----|:---:|
+|:----|:---|
 |@|必须以\@开头|
 |HWUSI-EAS100R|	the unique instrument name|
 |6|flowcell lane|
@@ -425,7 +444,7 @@ torrent测序仪拥有图形化的用户界面，便捷的操作方式，商业�
 层出不穷的三代小鲜肉中，表现最为亮眼的莫过于2010年推出的PacBio RS系列和2012年推出的Nanopore MinION。2015年PacBio又推出了万众瞩目的Sequel。
 能进入三代测序仪队列的还有Nanopore公司，也在2017年推出了GridION，为更方便、快捷、准确、经济的测序提供了无限可能。
 
-### 异军突起的pacbio
+### 异军突起的pacbio {-}
 
 PacBio SMRT技术其实也应用了边合成边测序的思想，并以SMRT芯片为测序载体。测序时，不需要对目标DNA进行PCR扩增，而是直接在目标片段两端加上两个发卡结构的接头，形成一个连续的环状结构。也因此，PacBio系统在读长上显示了极大的优势。目前比较受市场热捧的三代测序是PacBio的RSⅡ和2015年推出的Sequel。
 
@@ -450,7 +469,7 @@ DATA {(0): 51, 44,42, 44, 24, 24, 51, 51, 51, 51, 50, 20, 20, 20, 50, 51, 51, (1
 ```
 
 
-### 长到天际的Nanopore 
+### 长到天际的Nanopore {-}
 
 
 Oxford Nanopore 公司2005年在英国牛津成立，其运用的纳米孔测序技术使得DNA链在一个单通道中就能够被解码和识别，而不需要将长链打断成小短链。由于实现了DNA聚合酶内在自身的延续性和反应速度，Nanopore读长更长速度更快；同时由于能直接检测每个碱基的特征性电流，因而能对修饰碱基进行测序，对于表观遗传学研究具有极高的价值；因此，这款长到天际的测序仪，非常有潜力横扫当前测序格局。

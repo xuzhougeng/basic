@@ -453,7 +453,10 @@ http://www.bio-info-trainee.com/1339.html
 
 ### 定义和示例 {-}
 
-![vcf文件可以记录的基因组变异类型](image/C2/vcf_variation_class.jpg)
+```{r vcf,fig.cap="vcf文件可以记录的基因组变异类型", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C2/vcf_variation_class.jpg")
+```
+
 
 如上图所示，vcf记录的即为各类型的变异。例如：点突变，拷贝数变异，插入，缺失等结构变异。
 
@@ -584,22 +587,22 @@ GQ：基因型的质量值(Genotype Quality)。Phred格式(Phred_scaled)的质�
 
 PL：指定的三种基因型的质量值(provieds the likelihoods of the given genotypes)。这三种指定的基因型为(0/0,0/1,1/1)，这三种基因型的概率总和为1。和之前不一致，该值越大，表明为该种基因型的可能性越小。 Phred值 = -10 * log (p) p为基因型存在的概率。
 
-![VCF文件的官方描述](image/C2/vcf_file_format.jpg)
+```{r vcf_detail,fig.cap="VCF文件的官方描述", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C2/vcf_file_format.jpg")
+```
 
 上图可以帮助很好的理解vcf格式。
 
 
-
 注意事项：
 　　
-
 针对vcf格式有如bcftools等软件进行处理。
 
 生信菜鸟团的博客和生信技能树里面都介绍了很多处理vcf的软件。
 　　
 
 强烈推荐去看《生信技能树》中的：我的基因组28 
-https://en.wikipedia.org/wiki/Variant_Call_Format
+<https://en.wikipedia.org/wiki/Variant_Call_Format>
 
 ## GTF和GFF
 

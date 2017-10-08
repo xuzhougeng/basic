@@ -9,6 +9,10 @@ bookdown::gitbook:
         <li><a href="https://bookdown.org" target="blank">本书由 bookdown 强力驱动</a></li>
     download: [pdf, epub]
     edit: https://github.com/yihui/bookdown-chinese/edit/master/%s
+    fontsettings:
+      theme: white
+      family: sans serif
+      size: 2
     sharing:
       github: yes
       facebook: no

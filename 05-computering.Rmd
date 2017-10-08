@@ -75,7 +75,7 @@ ncbi-blast-2.6.0+.dmg	123 MB
 ```
 可以看到软件开发单位提供的有src后缀的源代码文件，还有适用于各个操作系统的预编译版本
 
-### 二进制软件(预编译版本)
+### 二进制软件(预编译版本) {-}
 
 作为新手，建议大家直接根据自己的系统下载预编译版本软件，并且直接解压就可以使用啦。
 例子如下：
@@ -88,7 +88,7 @@ tar zxvf sratoolkit.2.6.3-centos_linux64.tar.gz
 ```
 我的系统是linux，所以用上面的代码软件就安装成功可以使用啦，是不是非常简单呢。
 
-### 源码软件
+### 源码软件 {-}
 
 一般的开源软件发布的时候肯定会把源代码放出来，如果是在linux系统下以源代码方式安装软件，那么一般自己的linux系统要有gcc编译器，还需要有一些库文件，这也是大多数新手被坑的地方。
 
@@ -116,14 +116,14 @@ make install
 ~/biosoft/myBin/bin/plot-bamstats --help
 ```
 
-### 系统自带软件中心
+### 系统自带软件中心 {-}
 
 大家都知道，操作系统只是一个生态环境而已，没有上面丰富多彩的软件，它的用处很有限，就好像购买之初的手机，不下载QQ,微信，音频视频软件，根本没办法玩。同样的，做生物信息学数据分析也是如此。
 唯一比较麻烦的事情是我们想安装的软件不是QQ、微信这种高频软件，而是科研相关的生物信息学数据分析软，大部分软件都不在系统自带软件中心。不过还是需要了解一下。
 首先，不同的系统，安装方式不一样，windows基本没有自带软件中心，MAC有appstore，但是生物信息学相关的很少，linux根据发行版不一样，安装命令不一样，ubuntu的用apt-get，centos的用yum，其余的自己去搜索了解即可。
 
 
-### conda软件管理
+### conda软件管理 {-}
 
 正是因为软件安装的各种坑，有些软件所需环境的配置同样令人头疼，会不断报错提醒你那些东西没有安装。
 而系统自带的软件中心又不太可能包含所有的软件，所以出现了conda这样的软件管理中心来弥补，详情请看[conda 官网(]https://bioconda.github.io/)
@@ -158,7 +158,7 @@ conda update 软件名       可以对软件进行升级:eg.    conda update bwa
 conda remove 卸载已经安装的软件
 ```
 
-### 语言类软件（包）
+### 语言类软件（包） {-}
 
 比如perl,R,python,java,matlab,ruby,C等等
 
@@ -236,7 +236,7 @@ IFS：         输入域分隔符。当shell读取输入时，用来分隔单词
 
 ## 编程语言
 
-### linux的shell
+### linux的shell {#linux-shell -}
 
 Linux系统在生物信息学数据处理中的重要性就不用我多说了，鉴于一直有学生问我一些很显而易见的问题，对系统性的学习并理解了Linux系统操作的专业人士来说是显而易见的。我在这里仅以拥有多年处理生物信息学数据经验过来人的角度给大家总结一下，Linux该如何学，该学什么，该花多少工夫，学习重点是什么？
 
@@ -319,7 +319,7 @@ R最新版的安装
 虚拟机屏幕及联网设置
 配置shiny，shiny-server，R-studio
 
-### R  {# R-language}
+### R  {#R-language -}
 
 > R语言不仅在生物信息数据处理中发挥着重要作用，也是其它主流数据处理人士的首选工具。现在非常多自学生物信息学的小伙伴必须学的就是R，所以写一个R的系统性入门指导是非常有必要的。我作为老一辈的生信工程师，所以喜欢perl一点，排斥python。我也稍微看过一些python的语法，个人认为R和python几乎是一模一样的。R的特点就是内置了大量的函数，基本上你认识的英文单词都可以是一个函数，即使不是，你也可以自定义为函数。搞清楚了函数和变量，就可以看懂大部分的R代码了。
 
@@ -472,7 +472,7 @@ http://cran.r-project.org/doc/contrib/Short-refcard.pdf
 http://www.rstudio.com/resources/cheatsheets/
 
 
-### perl  {# perl-language}
+### perl  {#perl-language -}
 
 > Perl是典型的脚本语言，短小精悍，非常容易上手，尤其适合处理文本，数据，以及系统管理。它在老一辈的生物信息学分析人员中非常流行，出于历史遗留原因大家肯定会或多或少地接触 Perl，即使你再怎么推崇Python或者GO等新兴编程语言。
 
@@ -599,7 +599,7 @@ https://www.cs.tut.fi/~jkorpela/perl/regexp.html
 https://support.sas.com/rnd/base/datastep/perl_regexp/regexp-tip-sheet.pdf
 
 
-### python  {# python-language}
+### python  {#python-language .unnumbered}
 
 > Python开发的方向太多了，有机器学习，数据挖掘，网络开发，爬虫等等。其实在生信领域，Python还显现不出绝对的优势，生信的大部分软件流程都是用shell或Perl写的，而且已经足够好用了。我选Python是因为我想顺便学点数据挖掘和机器学习的东西，而且Python这些年越来越火，发展势头远超其他脚本语言，所以学它肯定是没错的。
 
@@ -746,10 +746,10 @@ Python只是一门编程语言，一种实现工具，我们可以用很多种�
 
 - 《Bioinformatics Programming Using Python》 
  
-### R包安装终极解决方案  {# R-package}
+### R包安装终极解决方案  {#R-package .unnumbered}
 
 
-##### 写在前面：  {-}
+##### 写在前面： {-}
 
 >我曾多次强调过R语言在生物信息学中的重要性，也激发了很多小伙伴学习的热情。
 学习R语言必然会安装各种各样的包，很多人在这一步就遇到了困难。
@@ -972,7 +972,7 @@ sudo R CMD INSTALL package.tar.gz
 window或者mac平台一般不推荐命令行格式，可视化那么舒心，何必自讨苦吃呢？
 
 
-### perl模块终极解决方案 {# perl-module}
+### perl模块终极解决方案 {#perl-module .unnumbered}
 
 
 > 这种细节问题问我，我当然无法直接给出答案咯。毕竟，我的知识积累都不是靠死记硬背的。所以需要取回过头查看一下我的博客，才意识到，
@@ -1209,7 +1209,7 @@ use lib '/home/your-home/perl_lib';
 
 
 
-### Python包安装的小结  {# python-package}
+### Python包安装的小结  {#python-package .unnumbered}
 
 > 想当初刚学习Python的时候，就会用书本里面自带的一些package，用**sys**，**os**也用得很开心。
 后来接触到biopython项目，发现原来Python有这么不同功能的包，简直琳琅满目。

@@ -5,9 +5,12 @@
 中心法则是指遗传信息经过DNA转录成信使RNA(mRNA),再由转运RNA（tRNA）和核糖体将mRNA翻译成蛋白质（Protein）,完成遗传信息经DNA—RNA—蛋白质的传递。
 也可以由DNA自我复制成DNA,即完成遗传信息由DNA—DNA的传递。
 这是所有具有细胞结构的生物所遵循的法则。另外在某些病毒中的RNA自我复制和在某些病毒中以RNA为模版逆转录成DNA的过程，是对中心法则的补充。
-![](image/C6/genetic-central-dogma.png)
 
-### DNA 与 复制
+```{r principle,fig.cap="中心法则", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C6/genetic-central-dogma.png")
+```
+
+### DNA 与 复制 {-}
 
 脱氧核糖核酸又称去氧核糖核酸，是一种生物大分子，可组成遗传指令，引导生物发育与生命机能运作。主要功能是信息储存，可比喻为“蓝图”或“食谱”。其中包含的指令，是建构细胞内其他的化合物，如蛋白质与核糖核酸所需。带有蛋白质编码的DNA片段称为基因。脱氧核糖核酸又称去氧核糖核酸，是一种生物大分子，可组成遗传指令，引导生物发育与生命机能运作。主要功能是信息储存，可比喻为“蓝图”或“食谱”。其中包含的指令，是建构细胞内其他的化合物，如蛋白质与核糖核酸所需。带有蛋白质编码的DNA片段称为基因。
 
@@ -21,7 +24,7 @@ DNA是一种长链聚合物，组成单位为四种脱氧核苷酸，即：
 DNA是高分子聚合物，DNA溶液为高分子溶液，具有很高的粘度，可被甲基绿染成绿色。DNA对紫外线（260nm）有吸收作用，利用这一特性，可以对DNA进行含量测定。当核酸变性时，吸光度升高，称为增色效应；当变性核酸重新复性时，吸光度又会恢复到原来的水平。较高温度、有机溶剂、酸碱试剂、尿素、酰胺等都可以引起DNA分子变性，即DNA双链碱基间的氢键断裂，双螺旋结构解开—也称为DNA的解螺旋。
 
 
-### RNA 与 转录
+### RNA 与 转录 {-}
 
 [转录（Transcription）](https://en.wikipedia.org/wiki/Transcription_(biology) )是遗传信息由DNA转换到RNA的过程，即信使RNA（mRNA）以及非编码RNA（tRNA、rRNA等）的合成步骤。转录中，一个基因会被读取、复制为mRNA；这个过程由RNA聚合酶（RNA polymerase）和转录因子（transcription factor）所共同完成。
 
@@ -29,26 +32,30 @@ DNA是高分子聚合物，DNA溶液为高分子溶液，具有很高的粘度�
  - [顺式调控元件](https://en.wikipedia.org/wiki/Cis-regulatory_element)，Cis-regulatory elements (CREs) ：增强或抑制其附近基因转录活性的非编码区域。通常是转录因子结合位点（TFBS）: promoter,  enhancers, silencers, and insulators. 
  - [反式作用因子](https://en.wikipedia.org/wiki/Trans-regulatory_element)：能够特异结合顺式作用元件的因子，多数为蛋白质，如RNA聚合酶，能和RNA聚合酶结合稳定转录起始复合物的蛋白质等。
 
-![transcription](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/MRNA.svg/758px-MRNA.svg.png)
-
-
-
+```{r transcription,fig.cap="transcription", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C6/MRNA.png")
+```
 
 #### 1. 转录和转录调控 {-}
 
 转录组即某个物种或特定细胞在某一功能状态下产生的所有RNA的总和，可以揭示基因组序列中哪些序列能够表达，而且还能揭示在何时何处表达，以及转录活跃程度。
 
 在每个细胞中，只有一部分基因是能够转录，此处染色质多为开放状态，其余的基因则处于抑制状态，对应的染色质状态较为紧密。在细胞中，保持一类基因的关闭，而另一类基因开启的状态称为基因调控，基因调控是动态的，在生物生长发育中起重要作用。基因表达的调控包含诸多维度比如信号转导，转录前（包括染色质构象和表观调控等），转录调控，转录后调控（剪切、编辑、转运等等），翻译和翻译后调控。其中多个步骤都是围绕着基因序列（DNA序列—传统的认为是顺式元件Cis）和其结合因子包括蛋白和非蛋白因子（传统地认为反式作用因子Trans）而发生。wiki中给出了转录因子可能参与转录调控的所有途径，见下图：
-![TF](https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Transcription_Factors.svg/1024px-Transcription_Factors.svg.png)
+
+```{r TF,fig.cap="转录因子", fig.align='center', echo=FALSE}
+knitr::include_graphics("image/C6/Transcription_Factors.png")
+```
 
 
 基因的表观和转录调控可以分为两个层面，顺式元件和反式因子，技术方法学也可以简单粗暴地分为以研究顺式元件或反式因子为主的两类方法学：
 
  1. 已知或候选反式因子（表观和转录因子）和顺式元件的研究手段较成熟，比如经典的EMSA，报告基因，ChIP等。 
 
- 2. __如何研究在native状态下与之相互作用的未知反式因子？__ 基因组非编码区域含有大量的组织特异性的调控序列，包括基因转录增强子(enhancer)、沉默子（silencer）、绝缘子（insulators） 等。这些调控序列通常结合几个，几十个，甚至几百个调控因子（包括转录因子，染色质调控蛋白，组蛋白，RNA分子）以及他们形成的三维结构。用来分离纯化单个调控序列的传统的方法面临的最大的挑战是无法区分结合调控序列的特异性调控因子和细胞内大量的非特异性因子。现有的技术包括locked nucleic acids (LNAs)和transcription activator-like (TAL)蛋白只能用在分离纯化多拷贝的基因组重复序列，比如染色体端粒(telomere)。而其他的常规技术，比如ChIP-seq和ChIA-PE则依赖于单个调控因子或组蛋白修饰，而并不能纯化和分析单个调控序列所结合的多个调控因子以及三维结构。在今年8月刚被cell报道的In Situ capture of chromatin interactions by biotinylated dCAS9中，作者首次利用了“biotinylated dCAS9”的方法建立了高分辨率，位点特异原位DNA-蛋白质以及其他元件的互作网络，为攻克这一难题揭开了序幕 [^ref1]。
-![](http://owxb9z5ea.bkt.clouddn.com/17-9-29/88002581.jpg) 
+ 2. __如何研究在native状态下与之相互作用的未知反式因子？__ 基因组非编码区域含有大量的组织特异性的调控序列，包括基因转录增强子(enhancer)、沉默子（silencer）、绝缘子（insulators） 等。这些调控序列通常结合几个，几十个，甚至几百个调控因子（包括转录因子，染色质调控蛋白，组蛋白，RNA分子）以及他们形成的三维结构。用来分离纯化单个调控序列的传统的方法面临的最大的挑战是无法区分结合调控序列的特异性调控因子和细胞内大量的非特异性因子。现有的技术包括locked nucleic acids (LNAs)和transcription activator-like (TAL)蛋白只能用在分离纯化多拷贝的基因组重复序列，比如染色体端粒(telomere)。而其他的常规技术，比如ChIP-seq和ChIA-PE则依赖于单个调控因子或组蛋白修饰，而并不能纯化和分析单个调控序列所结合的多个调控因子以及三维结构。在今年8月刚被cell报道的In Situ capture of chromatin interactions by biotinylated dCAS9中，作者首次利用了“biotinylated dCAS9”的方法建立了高分辨率，位点特异原位DNA-蛋白质以及其他元件的互作网络，为攻克这一难题揭开了序幕 ^[ref1] 。
 
+```{r interact,fig.cap="位点特异原位DNA-蛋白质以及其他元件的互作网络", fig.align='center', echo=FALSE}
+knitr::include_graphics("http://owxb9z5ea.bkt.clouddn.com/17-9-29/88002581.jpg")
+```
 
 #### 2. 转录与NGS  {-}
 
@@ -76,7 +83,9 @@ DNA是高分子聚合物，DNA溶液为高分子溶液，具有很高的粘度�
 
 参考上文提及的转录因子的调控路径，2012 Shirley Liu 的[Minireview: Applications of Next-Generation Sequencing on Studies of Nuclear Receptor Regulation and Function](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3458226/) 总结得很好，主要有Gene Expression Profiling, Transcription Factor Cistrome Mapping, Epigenome Profiling, Interactions in Three Dimensions, 也直接上图表示：
 
-![NGS4TransReg](http://owxb9z5ea.bkt.clouddn.com/17-9-29/71714242.jpg)
+```{r NGS4TransReg,fig.cap="NGS4TransReg", fig.align='center', echo=FALSE}
+knitr::include_graphics("http://owxb9z5ea.bkt.clouddn.com/17-9-29/71714242.jpg")
+```
 
 (Next-generation sequencing applications in studies of transcriptional regulation. Applications in red make use mainly of the quantification of abundance, whereas applications in blue make use of sequence-based observations.)
 
@@ -89,15 +98,15 @@ DNA是高分子聚合物，DNA溶液为高分子溶液，具有很高的粘度�
 转录是在DNA和蛋白质之间传递信息的关键，调控途径多样，分析手段因此也层出不穷，多结合生物学背景，多看文献，才能想到idea再找数据去分析，光会用却不明白相关关系还是不行的。 
  
 
-### protein {#biology-protein}
+### protein {#biology-protein .unnumbered} 
 
-### 其它 {#biology-others}
+### 其它 {#biology-others .unnumbered}
 
 ## 组学
 
 介绍常见的6种组学技术，有待完善
 
-### 基因组
+### 基因组 {-}
 
 基因组学是一个非常广的概念，研究的可以是全基因组的重测序，比如对人类来说，基因组大小是3G(30亿个碱基)，我的全基因组测序共8.9亿条150bp的reads，那么全基因组范围的平均测序深度就是8.9亿*150/30亿~45X。
 
@@ -109,7 +118,7 @@ DNA是高分子聚合物，DNA溶液为高分子溶液，具有很高的粘度�
 
 最后，值得一提的是，上面的分析都是建立在测序个体的物种参考基因组是已知的前提，所以只需要跟参考基因组进行比较，来找差异。但即使是在测序数据已经海量的今天，也不是每个物种都有了参考基因组，这个时候基因组的de novo测序就可以大展身手了。它的分析流程也完全不一样。
 
-#### 全基因组重测序分析流程分享
+#### 全基因组重测序分析流程分享 {-}
 
 > 这里选取的是[ GATK best practice](https://www.broadinstitute.org/partnerships/education/broade/best-practices-variant-calling-gatk-1) 是目前认可度最高的全基因组重测序分析流程，尤其适用于``人类``研究。
 
@@ -683,6 +692,7 @@ INFO  08:53:17,637 MicroScheduler -   -> 0 reads (0.00% of total) failing Unmapp
 ###### 拆分SNP和INDEL并过滤低质量位点  {-}
 
 > 代码如下：
+
 ```shell
 module load java/1.8.0_91
 GENOME=/home/jianmingzeng/reference/genome/human_g1k_v37/human_g1k_v37.fasta 
@@ -735,7 +745,7 @@ java -Djava.io.tmpdir=$TMPDIR   -Xmx40g -jar $GATK -T VariantEval -R $GENOME  \
 
 这样得到的文件如下：
 
-```
+```shell
      801242 jmzeng_merge_filtered_indels.vcf
      760890 jmzeng_merge_filtered_PASS.indels.vcf
     3812094 jmzeng_merge_filtered_PASS.snps.vcf
@@ -988,7 +998,7 @@ INFO  21:20:51,032 ProgressMeter - Total runtime 130663.06 secs, 2177.72 min, 36
 接下来我会讲解realign和recal步骤的必要性，毕竟这两个步骤也的确太耗时了，尤其是recal，不仅仅耗时还特别占硬盘存储。
 
 
-#### tro家系外显子数据分析
+#### tro家系外显子数据分析 {-}
 
 外显子组测序（whole exome sequencing, WES）是指利用序列捕获技术将全基因组外显子区域DNA捕捉并富集后进行高通量测序的基因组分析方法。在人类基因中大约有18万个外显子,占人类基因组的1%，约30 Mb。相比于全基因组测序，外显子组测序更加经济、高效，目前已广泛应用于遗传病和癌症研究中。
 
@@ -1368,7 +1378,7 @@ A total of 132268 locus in VCF file passed QC threshold, representing 132809 SNP
 ```
 这个应该是非常有意义的，但是我还没学会后面的分析。只能先做到这里了……
 
-### 转录组
+### 转录组 {-}
 
 转录组测序的研究对象为特定细胞在某一功能状态下所能转录出来的**所有 RNA 的总和**，包括 mRNA 和非编码 RNA 。通过转录组测序，能够全面获得物种特定组织或器官的转录本信息，从而进行转录本结构研究、变异研究、**基因表达水平研究**以及全新转录本发现等研究。
 
@@ -1377,7 +1387,7 @@ A total of 132268 locus in VCF file passed QC threshold, representing 132809 SNP
 现在RNA-seq数据**使用广泛**，但是没有一套流程可以解决所有的问题。比较值得关注的RNA-seq分析中的重要的步骤包括：实验设计，质控，read比对，表达定量，可视化，差异表达，识别可变剪切，功能注释，融合基因检测，eQTL定位等。
 
 
-#### RNA-seq表达量分析指引
+#### RNA-seq表达量分析指引 {-}
 
 ##### (1)：[计算机资源的准备](http://www.biotrainee.com/thread-1742-1-1.html) {-}
 
@@ -1463,7 +1473,7 @@ A total of 132268 locus in VCF file passed QC threshold, representing 132809 SNP
 * 生信技能树»生信技能树›互动作业›项目实战›[mRNA-seq数据分析实战](http://www.biotrainee.com/thread-115-1-1.html)
 * [MeDIP-seq,ChIP-seq,RNA-seq结合起来分析](http://www.biotrainee.com/thread-883-1-1.html)
 
-#### RNA-seq检测变异分析实战
+#### RNA-seq检测变异分析实战 {-}
 
 前面我们说到RNA-seq最重要的就是对所测样品进行基因表达量的测定，但也有部分课题需要检测RNA-seq试剂里面的变异位点。
 这里也进行简单的介绍，如下：
@@ -1630,7 +1640,7 @@ java -jar GenomeAnalysisTK.jar \
   [1]: http://static.zybuluo.com/wangpeng905/tiitfgpjnuvyvfdnvvnud319/R1_QC.png
   [2]: http://static.zybuluo.com/wangpeng905/iqx3yy6wf72dmodirjnjvs6j/R2_QC.png
   
-#### 全转录组
+#### 全转录组 {-}
 
 > 全转录组即包含mRNA，small RNA，lncRNA，circRNA的测序。
 
@@ -1651,7 +1661,7 @@ java -jar GenomeAnalysisTK.jar \
 整合分析是全转录组测序的重点内容，基于标准分析的结果，整合分析重点讨论非编码RNA与编码RNA间的调控关系，主要包括两者间互作关系miRNA vs mRNA，miRNA vs lncRNA，miRNA vs circRNA，再进一步讨论三者间互作关系mRNA vs miRNA vs lncRNA，mRNA vs miRNA vs circRNA。而三者间的互作关系正是目前讨论得如火如荼的ceRNA（competing endogenous RNA）调控网络。
 
  
-#### 可变剪切
+#### 可变剪切 {-}
 
 ##### 什么是可变剪接，研究可变剪接的意义？  {-}
 
@@ -1693,7 +1703,7 @@ SpliceGrapher可以根据测序序列预测可变剪切模型，也可以用已�
 
 发表这个工具的文章是Xiaoxian Liu, et al. Detecting Alternatively Spliced Transcript Isoforms from Single-Molecule Long-Read Sequences without a Reference Genome. Mol Ecol Resour. (2017)
 
-#### 融合基因分析
+#### 融合基因分析 {-}
 
 基因融合现象发生在很多致命疾病中，如果是癌症等疾病的融合基因分析可以使用defuse软件， 利用reads的基因跨越以及一对reads的相对距离进行基因融合查找，当然，也可以使用BGI的SOAP系列，生信菜鸟团博客里面有详细描述软件的安装以及示例数据的测试使用。
 
@@ -1701,7 +1711,7 @@ SpliceGrapher可以根据测序序列预测可变剪切模型，也可以用已�
 
 
 
-#### 自学miRNA-seq八讲
+#### 自学miRNA-seq八讲 {-}
 
 ##### 第一讲：文献选择与解读  {-}
 
@@ -2333,11 +2343,11 @@ library(pheatmap)
 如果只是单纯的miRNA测序数据，可以回过头去研究一下de novo的miRNA预测的步骤，也是研究重点。
 
 
-### 表观组
+### 表观组 {-}
 
 几十年来，DNA一直被认为是决定生命遗传信息的核心物质，但是近些年新的研究表明，生命遗传信息从来就不是基因所能完全决定的，比如科学家们发现，可以在不影响DNA序列的情况下改变基因组的修饰，这种改变不仅可以影响个体的发育，而且还可以遗传下去。这种在基因组的水平上研究表观遗传修饰的领域被称为“表观基因组学(epigenomics）”。表观基因组学使人们对基因组的认识又增加了一个新视点：对基因组而言，不仅仅是序列包含遗传信息，而且其修饰也可以记载遗传信息。
 
-#### 自学ChIP-seq分析九讲
+#### 自学ChIP-seq分析九讲 {-}
 
 ##### 第一讲：文献选择与解读 {-}
 
@@ -3130,7 +3140,7 @@ CHIP-seq pipeline :　[http://www.slideshare.net/COST-events/chipseq-data-analys
 
 大家一定要看这个ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia.  [http://www.ncbi.nlm.nih.gov/pubmed/22955991](http://www.ncbi.nlm.nih.gov/pubmed/22955991)
 
-#### ChIP-seq数据分析指引
+#### ChIP-seq数据分析指引 {-}
 
 ##### 写在前面 {-}
 
@@ -3254,7 +3264,7 @@ peaks-calling的软件也不少，如果需要了解原理，请看我[前面的
 
 而且我们文章并没有设计处理前后的IP实验，没有peaks的变化，也不需要找差异结合位点。
 
-#### 450K甲基化芯片数据处理传送门
+#### 450K甲基化芯片数据处理传送门 {-}
 
 ##### 写在前面 {-}
 
@@ -3338,7 +3348,7 @@ R本身是支持各种系统的，所以不管是mac、windows还是linux理论�
 理解甲基化探针的CGI及基因位置注释并且简单可视化。
 
 
-### 微生物组
+### 微生物组 {-}
 
 “微生物组”（microbiome）是指存在于特定环境（生态位，biotype）中所有微生物种类及其遗传信息和功能的集合，其不仅包括该环境中微生物间的相互作用，还包括有微生物与该环境中其它物种及环境的相互作用。
 
@@ -3379,13 +3389,13 @@ UMI是经由白宫科学与技术政策办公室、加利福尼亚Oxnard的Kavli
 
 
 
-### 蛋白质组
+### 蛋白质组 {-}
 
 蛋白质组学（Proteomics）是指在**大规模水平上研究蛋白质的特征**，包括蛋白质的表达水平，翻译后修饰，蛋白与蛋白相互作用等，由此获得蛋白质水平关于疾病发生、细胞代谢等过程的整体而全面的认识。从蛋白角度分析疾病发生与发展的分子机理，挖掘疾病标志物（biomarker），并为免疫治疗和药物开发提供强力支撑，迈进精准医疗。蛋白质组的研究不仅为生命活动规律提供物质基础，也为多种疾病机制的阐明及攻克提供理论。
 
 蛋白质组学的研究是生命科学进入后基因组时代的特征，不仅是探索生命奥秘的必须工作，也能为人类健康事业带来巨大的利益。蛋白质不仅能为生命活动规律提供物质基础，而且蛋白质丰度的改变能够阐明多种疾病的机理。
 
-#### 定量蛋白质组学
+#### 定量蛋白质组学 {-}
 
 **定量蛋白质组学**是蛋白质组学中非常重要的研究方向。目前有很多定量方法例如SILAC, TMT, LFQ, PRM等多种方法，每种方法都有各自的优缺点，如何根据实验需求选择合适的定量方法是实验中的难点和热点。
 
@@ -3411,7 +3421,7 @@ UMI是经由白宫科学与技术政策办公室、加利福尼亚Oxnard的Kavli
 * 同位素标记相对和绝对定量(Isobaric tags for relative and absolute quantitation, iTRAQ)
 
 
-#### 修饰蛋白质组学
+#### 修饰蛋白质组学 {-}
 
 **翻译后修饰**是指对翻译后的蛋白质进行共价加工的过程，通过在一个或多个氨基酸残基加上修饰基团，可以改变蛋白质的理化性质。许多至关重要的生命进程不仅由蛋白质的相对丰度控制，更重要的是受到时空特异性和翻译后修饰的调控，揭示翻译后修饰的发生规律是解析蛋白质复杂多样的生物功能的一个重要前提。
 
@@ -3423,7 +3433,7 @@ UMI是经由白宫科学与技术政策办公室、加利福尼亚Oxnard的Kavli
 质谱是鉴定蛋白质翻译后修饰的重要方法，其原理是利用蛋白质发生修饰后的质量偏移来实现翻译后修饰位点的鉴定；同时，由于翻译后修饰的蛋白质在样本中含量低且动态范围广，检测前需要对发生修饰的蛋白质或肽段进行富集，然后再进行质谱鉴定。
 
 
-#### 定量修饰蛋白质组学
+#### 定量修饰蛋白质组学 {-}
 
 **修饰蛋白质组学定量分析**主要是将修饰蛋白质或肽段富集方法与蛋白质组学相对定量的技术结合起来，在鉴定翻译后修饰位点的同时，对不同样本中翻译后修饰的程度进行相对定量，从而实现大规模的修饰蛋白质组学定性和定量分析；通常用于修饰定量分析的蛋白质组学方法包括非标记定量Label free，标记定量iTRAQ及SILAC。 根据技术原理可以分为两种
 
@@ -3435,7 +3445,7 @@ UMI是经由白宫科学与技术政策办公室、加利福尼亚Oxnard的Kavli
 
 ![定量修饰蛋白质组学分析数据分析流程](image/C6/protein_modification_expression.png)
 
-### 代谢组
+### 代谢组 {-}
 
 **代谢组学**是继基因组学和蛋白质组学之后新发展起来的一门学科，它通过对**人体内小分子代谢物（50~1,500 Da）**进行精准定性定量，分析代谢物与人体生理病理变化的关系，研究疾病发生发展、寻找疾病生物标记物、预测疾病预后等。代谢组学在临床诊断上将有广阔的发展前景，主要应用方向有四个方面：
 
@@ -3448,7 +3458,7 @@ UMI是经由白宫科学与技术政策办公室、加利福尼亚Oxnard的Kavli
 
 最终体现在代谢表型的差异上。因此，代谢表型的不同反映了由遗传背景及环境因素所引起的个体差异。代谢组学技术的特点体现为代谢表型的特点。首先人体代谢表型由遗传背景和环境双重因素决定。
 
-#### 代谢组学相关数据库
+#### 代谢组学相关数据库 {-}
 
 常用的代谢组学相关数据库有人类代谢组数据库[Human Metabolome Database， HMDB](http://www.hmdb.ca/)、[KEGG数据]库(http://www.genome.jp/kegg/pathway.html)、[Reactome数据库](http://www.reactome.org)等，一一介绍如下：
 
@@ -3463,7 +3473,7 @@ UMI是经由白宫科学与技术政策办公室、加利福尼亚Oxnard的Kavli
 
 如何更好地整合各种组学数据目前仍是生物学界面临的一个重大挑战，并且有时还要面对不够完善的实验设计、不同实验平台的数据的整合。常用的方法是代谢通路水平的分析、生物网络分析、经验关联分析等。
 
-#### 代谢组学相关网页工具
+#### 代谢组学相关网页工具 {-}
 
 > 有一些软件或网站可以提供现成的整合多种组学数据的分析。
 
@@ -3477,7 +3487,7 @@ UMI是经由白宫科学与技术政策办公室、加利福尼亚Oxnard的Kavli
 
 
 
-#### 代谢组学数据特点
+#### 代谢组学数据特点 {-}
 
 代谢组学数据具有以下特点：
 
@@ -3488,7 +3498,7 @@ UMI是经由白宫科学与技术政策办公室、加利福尼亚Oxnard的Kavli
 - 相关性和冗余性：各种代谢物并非独立存在，而是相互之间具有不同程度的相关性，同时由于碎片、加合物和同位素的存在使得数据结构存在很大的冗余性，这就需要采用合理的统计分析策略来揭示隐藏其中的复杂数据关系。
 - 分布的不规则和稀疏性： 代谢组学数据分布不规则，而且数据具有稀疏性（即有很多值为零) ，因此，传统的一些线性和参数分析方法此时可能失效。
 
-#### 代谢组数据分析
+#### 代谢组数据分析 {-}
 
 说起代谢组数据分析软件，可能大家第一个想到的就是SIMCA-P。[SIMCA-P](http://umetrics.com/products/simca)软件是由Umetrics公司在1987研究开发，目前是一款公认的多元变量统计分析软件，被绝大多数代谢组服务提供商所采用。
 
